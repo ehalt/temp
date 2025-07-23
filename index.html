@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thu you!</title>
+    <style>
+        .something {
+            text-align: center;
+            border: 4px solid #FFAAAA;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px;
+        }
+
+        .btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #E3DE61;
+            color: #5A827E;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="something" class="something">
+    <button class="btn" onclick="handleClick()">Umn click me!</button>
+    </div>
+    <script>
+        function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function handleClick() {
+            const div = document.getElementById('something');
+            for (let i = 0; i < 7; i++) {
+                const h1 = document.createElement('h1');
+                h1.textContent = "Thuu!";
+                div.appendChild(h1); 
+                await wait(500);
+                h1.textContent = "";
+                await wait(500);
+            }
+        }
+
+    </script>
+</body>
+</html>
